@@ -1292,7 +1292,6 @@ Value listsinceblock(const Array& params, bool fHelp)
     BOOST_FOREACH(PAIRTYPE(const uint256, CWalletTx)& it, pwalletMain->mapWallet)
     {
         CWalletTx tx = it.second; //(*it).second;
-
         if (depth == -1 || tx.GetDepthInMainChain() < depth)
             ListTransactions(tx, "*", 0, true, transactions);
     }
